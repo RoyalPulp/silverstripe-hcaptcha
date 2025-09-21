@@ -114,13 +114,13 @@ class HCaptchaField extends FormField
       $this->beforeExtending('updateValidate', function (ValidationResult $result) {
         if ($this->processCaptcha() == false) {
           $result->addFieldError(
-                  $this->getName(),
-                  _t(
-                      __CLASS__ . '.EMPTY',
-                      'Please answer the captcha. If you do not see the captcha please enable Javascript'
-                  )
-              );
-          }
+            $this->getName(),
+            _t(
+              __CLASS__ . '.EMPTY',
+              'Please answer the captcha. If you do not see the captcha please enable Javascript'
+            )
+          );
+        }
       });
       return parent::validate();
     }
